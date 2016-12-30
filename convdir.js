@@ -17,7 +17,7 @@ fs.readdir(currentDir, (err, files) => {
     }
   })
 
-  if(mdFiles.length === 0){console.log("No markdown files in this directory");return;}
+  if(mdFiles.length === 0){console.log("\x1b[35m", "No markdown files in this directory");return;}
 
   var pdfFiles = mdFiles.map( (d) => {
     return "pdfs/" + d.replace(".md", ".pdf") })
