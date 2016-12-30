@@ -20,7 +20,10 @@ fs.readdir(currentDir, (err, files) => {
   var pdfDocs = mdDocs.map( (d) => {
     return "pdfs/" + d.replace(".md", ".pdf") })
 
-  markdownpdf().from(mdDocs).to(pdfDocs, () => {
+  var options = {
+    out: '~/Desktop'
+  }
+  markdownpdf(options).from(mdDocs).to(pdfDocs, () => {
     pdfDocs.forEach((file) => {
       console.log("\x1b[32m", "Created", file)
     })
