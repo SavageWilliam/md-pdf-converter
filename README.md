@@ -17,7 +17,7 @@ npm install
 npm link
 ```
 
-4) TRY IT OUT! By running this following command in a directory that contains a markdown file:
+4) TRY IT OUT! By running the following command in a directory that contains a markdown file:
 ```
 convdir
 ```
