@@ -5,7 +5,7 @@ var fs = require('fs');
 
 var currentDir = process.cwd();
 
-var mdDocs = [];
+var mdFiles = [];
 
 fs.readdir(currentDir, (err, files) => {
 
@@ -13,15 +13,20 @@ fs.readdir(currentDir, (err, files) => {
 
   files.forEach((fileName) => {
     if(fileName.split(".")[1] === 'md') {
-      mdDocs.push(fileName);
+      mdFiles.push(fileName);
     }
   })
 
-  var pdfDocs = mdDocs.map( (d) => {
+  if(mdFiles.length === 0){console.log("\x1b[35m", "No markdown files in this directory");return;}
+
+  var pdfFiles = mdFiles.map( (d) => {
     return "pdfs/" + d.replace(".md", ".pdf") })
 
-  markdownpdf().from(mdDocs).to(pdfDocs, () => {
-    pdfDocs.forEach((file) => {
+  var options = {
+    out: '~/Desktop'
+  }
+  markdownpdf(options).from(mdFiles).to(pdfFiles, () => {
+    pdfFiles.forEach((file) => {
       console.log("\x1b[32m", "Created", file)
     })
   });

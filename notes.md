@@ -2,9 +2,9 @@
 
 Rather than having to type...
 
-`node path/to/script.js arguments`
+`path/to/convdir.js`
 
-adjusting the script's file path all the time relative to our current location we could just run `script` in our terminal anywhere in our directory tree and know it will work just like unix `cat`, `ls`, and `grep`?
+We could just run `convdir` in our terminal anywhere in our directory tree and know it will work just like unix `cat`, `ls`, and `grep`!
 
 You can do that in node and it only takes a few simple steps!
 
@@ -14,12 +14,12 @@ You can do that in node and it only takes a few simple steps!
 #!/usr/bin/env node
 ```
 
-2. Run `npm init` in the root folder of the repo and create a `package.json`.
-
 3. Adjust your `package.json` as follows:
 
 * remove the main entry: this is only used for modules that will be used through the module system (e.g. var _ = require('underscore');).
+
 * add preferGlobal and set it to true, which means if someone installs this module through npm and doesn’t use the --global option, they will be warned that the module is designed to be installed globally.
+
 * add the bin object, which maps commands to files. This means when this module is installed, npm will set up the named executables to execute their assigned javascript files. Don't name them after existing commands like ls, grep, etc, it needs to be unique.
 
 Your `package.json` should now look like this:
@@ -36,9 +36,7 @@ Your `package.json` should now look like this:
   "license": "ISC",
   "preferGlobal": true,
   "bin": {
-    "your-name-here-cat": "lesson-1/cat.js",
-    "your-name-here-ls": "lesson-1/ls.js",
-    "your-name-here-grep": "lesson-1/grep.js"
+    "convdir": "convdir.js"
   }
 }
 ```
@@ -48,8 +46,9 @@ Your `package.json` should now look like this:
 5. Now... move into a different directory and try out...
 
 ```
-your-name-here-cat file.extension
-your-name-here-ls
-your-name-here-ls -ex extension
-your-name-here-grep pattern file.extension
+convdir
 ```
+
+## Printing colorful text in terminal when run node js script
+
+[HERE](https://coderwall.com/p/yphywg/printing-colorful-text-in-terminal-when-run-node-js-script)
