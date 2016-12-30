@@ -1,0 +1,22 @@
+{
+  "name": "md-pdf-converter",
+  "version": "1.0.0",
+  "description": "Uses the 'markdown-pdf' 3rd party node module to convert md files to a pdf.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavageWilliam/md-pdf-converter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SavageWilliam/md-pdf-converter/issues"
+  },
+  "homepage": "https://github.com/SavageWilliam/md-pdf-converter#readme",
+  "dependencies": {
+    "markdown-pdf": "^7.0.0"
+  }
+}
