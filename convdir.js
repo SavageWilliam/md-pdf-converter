@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var markdownpdf = require("markdown-pdf");
 var fs = require('fs');
 
@@ -20,7 +22,7 @@ fs.readdir(currentDir, (err, files) => {
 
   markdownpdf().from(mdDocs).to(pdfDocs, () => {
     pdfDocs.forEach((file) => {
-      console.log("Created", file)
+      console.log("\x1b[32m", "Created", file)
     })
   });
 });
