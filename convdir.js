@@ -7,24 +7,18 @@ console.log(currentDir);
 
 var mdDocs = [];
 
-
-fs.readdir(currentDir, function(err, files){
+fs.readdir(currentDir, (err, files) => {
   if(err){console.log(err);return;}
-  files.forEach(function(fileName) {
+  files.forEach((fileName) => {
     if(fileName.split(".")[1] === 'md') {
-      console.log(fileName);
       mdDocs.push(fileName);
-      console.log(mdDocs);
     }
   })
-  var pdfDocs = mdDocs.map(function (d) { return "pdfs/" + d.replace(".md", ".pdf") })
-  console.log('here');
-  console.log(mdDocs);
-  console.log(pdfDocs);
+  var pdfDocs = mdDocs.map( (d) => {
+    return "pdfs/" + d.replace(".md", ".pdf") })
 
-  markdownpdf().from(mdDocs).to(pdfDocs, function () {
+  markdownpdf().from(mdDocs).to(pdfDocs, () => {
     pdfDocs.forEach(function (d) { console.log("Created", d) })
   });
-
 
 });
