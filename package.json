@@ -17,9 +17,10 @@
   },
   "homepage": "https://github.com/SavageWilliam/md-pdf-converter#readme",
   "dependencies": {
+    "ascii-progress": "^1.0.5",
     "markdown-pdf": "^7.0.0"
   },
   "bin": {
-    "convdir": "convdir.js" 
+    "convdir": "convdir.js"
   }
 }
