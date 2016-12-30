@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var markdownpdf = require("markdown-pdf");
 var fs = require('fs');
 
