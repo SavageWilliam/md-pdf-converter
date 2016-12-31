@@ -25,32 +25,29 @@ fs.readdir(currentDir, (err, files) => {
 
   var pdfFiles = mdFiles.map( (d) => {
     return "pdfs/" + d.replace(".md", ".pdf") })
- /*
-  var options = {
-    out: '~/Desktop'
-  }
-  */
+
   forward();
 
   markdownpdf().from(mdFiles).to(pdfFiles, () => {
     pdfFiles.forEach((file) => {
       console.log("\x1b[32m", "Created", file);
     })
+    bar.tick(100);
     process.exit();
   });
 });
 
-/*back and forth progress bar*/
+/*   back and forth progress bar   */
 var bar = new ProgressBar({
   schema:' :title [:bar.cyan] :percent.yellow'
 });
 
 function forward() {
   bar.tick(1, { title: 'Converting.yellow ' });
-  if (bar.current > 70 && bar.current <99) {
+  if (bar.current > 65) {
     backward();
   } else {
-    setTimeout(forward, 10);
+    setTimeout(forward, 8);
   }
 }
 
@@ -59,6 +56,12 @@ function backward() {
   if (bar.current === 1) {
     forward();
   } else {
-    setTimeout(backward, 7);
+    setTimeout(backward, 4);
   }
 }
+
+/*  //options for markdownpdf()
+ var options = {
+   out: '~/Desktop'
+ }
+ */
