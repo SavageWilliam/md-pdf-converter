@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 var markdownpdf = require("markdown-pdf");
 var ProgressBar = require('ascii-progress');
+
+var bar = require('./progress-bar');
+var forward = require('./progress-bar');
+var backward = require('./progress-bar');
 var fs = require('fs');
 
 var currentDir = process.cwd();
@@ -26,6 +30,8 @@ fs.readdir(currentDir, (err, files) => {
   var pdfFiles = mdFiles.map( (d) => {
     return "pdfs/" + d.replace(".md", ".pdf") })
 
+  var bar = bar;
+
   forward();
 
   markdownpdf().from(mdFiles).to(pdfFiles, () => {
@@ -37,28 +43,7 @@ fs.readdir(currentDir, (err, files) => {
   });
 });
 
-/*   back and forth progress bar   */
-var bar = new ProgressBar({
-  schema:' :title [:bar.cyan] :percent.yellow'
-});
 
-function forward() {
-  bar.tick(1, { title: 'Converting.yellow ' });
-  if (bar.current > 65) {
-    backward();
-  } else {
-    setTimeout(forward, 8);
-  }
-}
-
-function backward() {
-  bar.tick(-1, { title: 'md --> pdf' });
-  if (bar.current === 1) {
-    forward();
-  } else {
-    setTimeout(backward, 4);
-  }
-}
 
 /*  //options for markdownpdf()
  var options = {
