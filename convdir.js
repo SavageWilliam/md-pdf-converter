@@ -31,7 +31,7 @@ fs.readdir(currentDir, (err, files) => {
   }
   */
   forward();
-  
+
   markdownpdf().from(mdFiles).to(pdfFiles, () => {
     pdfFiles.forEach((file) => {
       console.log("\x1b[32m", "Created", file);
@@ -46,7 +46,7 @@ var bar = new ProgressBar({
 });
 
 function forward() {
-  bar.tick(1, { title: 'Converting ' });
+  bar.tick(1, { title: 'Converting.yellow ' });
   if (bar.current > 70 && bar.current <99) {
     backward();
   } else {
