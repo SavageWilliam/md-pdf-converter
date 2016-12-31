@@ -2,6 +2,14 @@
 
 ## Usage
 
+### Install module:
+```
+npm install --global md-pdf-converter
+```
+**OR**
+
+### Download repo:
+
 1) Clone this repo:
 ```
 git clone https://github.com/SavageWilliam/md-pdf-converter.git
