@@ -3,7 +3,6 @@ var markdownpdf = require("markdown-pdf");
 var ProgressBar = require('ascii-progress');
 var fs = require('fs');
 
-
 var currentDir = process.cwd();
 
 var mdFiles = [];
@@ -20,35 +19,35 @@ fs.readdir(currentDir, (err, files) => {
 
   if(mdFiles.length === 0){console.log("\x1b[35m", "No markdown files in this directory");return;}
 
+  mdFiles.forEach((file) => {
+    console.log("\x1b[33m", "Converting", file);
+  })
+
   var pdfFiles = mdFiles.map( (d) => {
     return "pdfs/" + d.replace(".md", ".pdf") })
- /*
-  var options = {
-    out: '~/Desktop'
-  }
-  */
+
+  forward();
+
   markdownpdf().from(mdFiles).to(pdfFiles, () => {
     pdfFiles.forEach((file) => {
-      bar = bar.completed;
       console.log("\x1b[32m", "Created", file);
-
     })
-
+    bar.tick(100);
     process.exit();
   });
 });
 
-/*back and forth progress bar*/
+/*   back and forth progress bar   */
 var bar = new ProgressBar({
   schema:' :title [:bar.cyan] :percent.yellow'
 });
 
 function forward() {
-  bar.tick(1, { title: 'Converting ' });
-  if (bar.current > 70 && bar.current <99) {
+  bar.tick(1, { title: 'Converting.yellow ' });
+  if (bar.current > 65) {
     backward();
   } else {
-    setTimeout(forward, 10);
+    setTimeout(forward, 8);
   }
 }
 
@@ -57,8 +56,12 @@ function backward() {
   if (bar.current === 1) {
     forward();
   } else {
-    setTimeout(backward, 7);
+    setTimeout(backward, 4);
   }
 }
 
-forward();
+/*  //options for markdownpdf()
+ var options = {
+   out: '~/Desktop'
+ }
+ */
