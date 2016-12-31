@@ -1,5 +1,7 @@
 # Directory md-pdf Converter
 
+Converts all markdown files in current directory to pdfs.
+
 ## Usage
 
 ### Install module:
@@ -25,7 +27,7 @@ npm install
 npm link
 ```
 
-4) TRY IT OUT! By running the following command in a directory that contains a markdown file:
+4) TRY IT OUT! By running the following command in a directory that contains a least one markdown file:
 ```
 convdir
 ```
@@ -36,7 +38,7 @@ Uses the [markdown-pdf](https://www.npmjs.com/package/markdown-pdf) 3rd party no
 
 ## Current markdown-pdf module's CLI interface usage:
 ```
-Usage: markdown-pdf [options] <markdown-file-path>
+markdown-pdf [options] <markdown-file-path>
 ```
 
 I want to extend this module and create a module that converts all md files within the current directory into pdf files (if the respective pdf already exists... then overwrite).
@@ -49,9 +51,14 @@ This new module will be intended to be installed globally so that when running t
 
 ## Whats next
 
-1) Run the conversion sync and add bar.tick() counter with [ascii-progress](https://github.com/bubkoo/ascii-progress), a progress bar which will count each conversion and display in the terminal.
+1) Run the conversion sync and use a more meaningful progress bar to count ticks. [ascii-progress](https://github.com/bubkoo/ascii-progress).
 > See progress-bar branch.
 
 2) Change the output directory to a folder on desktop using options. Enabling easier mobile-dropbox-intergration (easier target).
 
 3) If possible I would be able to set a watch method that on a directory executes the conversion when a new markdown file is added/created.
+
+## Dependencies
+
+- [markdown-pdf](https://www.npmjs.com/package/markdown-pdf)
+- [ascii-progress](https://github.com/bubkoo/ascii-progress)
