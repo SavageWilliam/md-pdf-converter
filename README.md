@@ -5,16 +5,14 @@ Converts all markdown files in current directory to pdf files contained in a new
 ## Usage
 
 ### Install module:
+
+Install module and the script on your system by running:
 ```
 npm install --global md-pdf-converter
-```
-
-Install the script on your system by running:
-```
 npm link
 ```
 
-TRY IT OUT! By running the following command in a directory that contains a least one markdown file:
+TRY IT OUT! By running the following command in your terminal.
 ```
 convdir
 ```
