@@ -16,6 +16,7 @@ Try it out! Run following command:
 ```
 $ convdir
 ```
+![example use image]('image.jpg');
 
 ## Preface
 
