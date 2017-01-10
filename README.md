@@ -1,6 +1,4 @@
-# Directory md-pdf Converter
-
-Converts *all* markdown files in the current directory to pdf files.
+# Converts *all* markdown files in the current directory to pdf files.
 
 ## Usage
 
