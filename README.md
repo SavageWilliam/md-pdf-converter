@@ -2,25 +2,22 @@
 
 ## Usage
 
-### Install module:
+Install module globally:
 ```
-npm install --global md-pdf-converter
-```
-
-Now install the script on your system by running:
-```
-npm link
+npm install -g md-pdf-converter
 ```
 
-Try it out! Run following command:
+Run following command (in any directory):
 ```
 $ convdir
 ```
 
-If you'd like to convert specific files, you still can:
+If you'd like to convert a specific file only, you still can:
 ```
 $ convfile path/to/file.md
 ```
+
+Simple as that :bowtie:
 
 ## Preface
 
