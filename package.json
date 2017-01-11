@@ -21,6 +21,7 @@
     "markdown-pdf": "^7.0.0"
   },
   "bin": {
-    "convdir": "convdir.js"
+    "convdir": "convdir.js",
+    "convfile": "convfile.js"
   }
 }

@@ -16,7 +16,11 @@ Try it out! Run following command:
 ```
 $ convdir
 ```
-![example use image]('image.jpg');
+
+If you'd like to convert specific files, you still can:
+```
+$ convfile path/to/file.md
+```
 
 ## Preface
 
