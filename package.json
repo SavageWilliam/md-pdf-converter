@@ -1,7 +1,7 @@
 {
   "name": "md-pdf-converter",
   "version": "1.0.4",
-  "description": "Uses the 'markdown-pdf' 3rd party node module to convert md files to a pdf.",
+  "description": "Super user friendly CLI convertion of *all* markdown files in the current directory to pdf files.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

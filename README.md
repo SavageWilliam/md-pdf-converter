@@ -1,5 +1,3 @@
-# Converts *all* markdown files in the current directory to pdf files.
-
 ## Usage
 
 Install module globally:
