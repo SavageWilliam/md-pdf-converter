@@ -1,40 +1,26 @@
-# Directory md-pdf Converter
+# md-pdf-converter
 
-Converts all markdown files in current directory to pdf files contained within a new directory 'pdfs' in the cwd.
+Converts _all_ markdown files in current directory to pdf files contained within a new directory 'pdfs' in the cwd.
 
 ## Usage
 
-### Install module:
-
-Install module and the script on your system by running:
+1) Install module and the script on your system by running:
 ```
 npm install --global md-pdf-converter
-npm link
 ```
 
-TRY IT OUT! By running the following command in your terminal.
+2) TRY IT OUT! Run the following command in your terminal:
+
 ```
-convdir
+$ convdir
 ```
 
-**OR**
-
-### Download repo:
-
-1) Clone this repo:
+If you'd like to convert a specific file only, you still can:
 ```
-git clone https://github.com/SavageWilliam/md-pdf-converter.git
+$ convfile path/to/file.md
 ```
 
-2) Install dependencies:
-```
-npm install
-```
-
-3) Now in the same repo install the script on your system by running:
-```
-npm link
-```
+Simple as that :bowtie:
 
 ## Preface
 

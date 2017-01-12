@@ -14,17 +14,15 @@ fs.readdir(currentDir, (err, files) => {
   files.forEach((fileName) => {
     if(fileName.split(".")[1] === 'md') {
       mdFiles.push(fileName);
+      console.log("\x1b[33m", "Converting", fileName);
     }
   })
 
   if(mdFiles.length === 0){console.log("\x1b[35m", "No markdown files in this directory");return;}
 
-  mdFiles.forEach((file) => {
-    console.log("\x1b[33m", "Converting", file);
-  })
-
   var pdfFiles = mdFiles.map( (d) => {
-    return "pdfs/" + d.replace(".md", ".pdf") })
+    return "pdfs/" + d.replace(".md", ".pdf")
+  });
 
   forward();
 
@@ -37,7 +35,8 @@ fs.readdir(currentDir, (err, files) => {
   });
 });
 
-/*   back and forth progress bar   */
+/**** back and forth progress bar ****/
+
 var bar = new ProgressBar({
   schema:' :title [:bar.cyan] :percent.yellow'
 });
@@ -59,9 +58,3 @@ function backward() {
     setTimeout(backward, 4);
   }
 }
-
-/*  //options for markdownpdf()
- var options = {
-   out: '~/Desktop'
- }
- */
