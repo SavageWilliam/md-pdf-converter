@@ -5,7 +5,7 @@ Install module globally:
 npm install -g md-pdf-converter
 ```
 
-Run following command (in any directory):
+Run following command (in any directory) to convert *all* md files to pdfs:
 ```
 $ convdir
 ```

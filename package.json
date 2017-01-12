@@ -1,7 +1,7 @@
 {
   "name": "md-pdf-converter",
   "version": "1.0.5",
-  "description": "Super user friendly CLI convertion of *all* markdown files in the current directory to pdf files.",
+  "description": "Simple CLI convertion of markdown files in the current directory to pdf files.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
